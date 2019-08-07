@@ -25,7 +25,7 @@ namespace CAISYS.Models
 
         public int UnitsSold { get; set; }
 
-        public int RemainedUnit
+        public int RemainedUnits
         {
             get
             {
