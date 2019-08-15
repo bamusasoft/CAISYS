@@ -20,5 +20,9 @@ namespace CAISYS.Models
         public decimal Credit { get; set; }
 
         public bool Posted { get; set; }
+
+        public AccountChart AccountChart { get; set; }
+
+        public ICollection<GeneralLedger> GeneralLedgers { get; set; }
     }
 }

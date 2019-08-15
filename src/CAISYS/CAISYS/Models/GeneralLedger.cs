@@ -11,8 +11,14 @@ namespace CAISYS.Models
 
         public int EntryNo { get; set; }
 
+        public string AccountNo { get; set; }
+
         public decimal Debit { get; set; }
 
         public decimal Credit { get; set; }
+
+        public AccountChart AccountChart { get; set; }
+
+        public Journal Journal { get; set; }
     }
 }
