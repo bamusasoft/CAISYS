@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CAISYS.Db;
 using CAISYS.Models;
-using CAISYS.ViewModels.AccountChart;
+using CAISYS.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -31,26 +31,16 @@ namespace CAISYS.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AddAccount(string parent, AddAccountVm vm)
+        public async Task<IActionResult> AddAccount(AccountChart model)
         {
-            if (string.IsNullOrEmpty(parent))
-            {
-                throw new ArgumentNullException(parent);
-            }
-
+            
             if (ModelState.IsValid)
             {
                 try
                 {
-                    AccountChart acc = new AccountChart();
-                    acc.AccountLevel = vm.AccountLevel;
-                    acc.AccountNo = vm.AccountNo;
-                    acc.AccountType = vm.AccountType;
-                    acc.CostCenter = vm.CostCenter;
-                    acc.DetailAccount = vm.DetailAccount;
+                   
 
-                    _dbContext.AccountCharts.Add(acc);
-                    await _dbContext.SaveChangesAsync();
+                   
 
                     _logger.LogInformation("New Account chart Added");
 
@@ -62,7 +52,7 @@ namespace CAISYS.Controllers
 
                 }
             }
-            return View(vm);
+            return View(model);
 
         }
     }
