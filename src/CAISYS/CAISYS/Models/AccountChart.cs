@@ -1,4 +1,5 @@
 ﻿using CAISYS.Resources;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,14 +11,31 @@ namespace CAISYS.Models
 {
     public enum AccountType
     {
-        Asset = 0,
-        Liablility = 1,
-        Equity = 2,
-        Revenue = 3,
-        Expense = 4
+        Asset = 1,
+        Liablility = 2,
+        Equity = 3,
+        Revenue = 4,
+        Expense = 5
     }
     public class AccountChart
     {
+        private readonly LocService _localizer;
+
+        public AccountChart() { }
+
+        public AccountChart(LocService localizer)
+        {
+            _localizer = localizer;
+            AccountTypes = new List<SelectListItem>()
+            {
+                new SelectListItem(_localizer.GetLocalizedHtmlString("Asset"), "1"),
+                new SelectListItem(_localizer.GetLocalizedHtmlString("Liability"), "2"),
+                new SelectListItem(_localizer.GetLocalizedHtmlString("Equity"), "3"),
+                new SelectListItem(_localizer.GetLocalizedHtmlString("Revenue"), "4"),
+                new SelectListItem(_localizer.GetLocalizedHtmlString("Expense"), "5"),
+            };
+        }
+        #region Database Table mapping
 
         [Key]
         [Required(ErrorMessage ="AccountNoRequired")]
@@ -47,6 +65,10 @@ namespace CAISYS.Models
         
         public ICollection<GeneralLedger> GeneralLedgers { get; set; }
         public ICollection<Journal> Journals { get; set; }
+        #endregion
+
+        [NotMapped]
+        public List<SelectListItem> AccountTypes { get; set; }
 
 
     }

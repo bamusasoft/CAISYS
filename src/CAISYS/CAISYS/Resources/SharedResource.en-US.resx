@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountLevel" xml:space="preserve">
+    <value>Account Level</value>
+  </data>
   <data name="AccountNo" xml:space="preserve">
-    <value>AccountNo</value>
+    <value>Account No</value>
   </data>
   <data name="AccountNoRequired" xml:space="preserve">
     <value>Account No is required</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>Account Type</value>
+  </data>
+  <data name="Asset" xml:space="preserve">
+    <value>Assets</value>
   </data>
   <data name="CssIntegrity" xml:space="preserve">
     <value>sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T</value>
@@ -129,11 +138,35 @@
   <data name="CssPath" xml:space="preserve">
     <value>https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css</value>
   </data>
+  <data name="DetailAccount" xml:space="preserve">
+    <value>Detail Account?</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
   </data>
+  <data name="Equity" xml:space="preserve">
+    <value>Equity</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Expenses</value>
+  </data>
+  <data name="Liability" xml:space="preserve">
+    <value>Liabilities</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>Arabic Name</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>English Name</value>
+  </data>
   <data name="overview" xml:space="preserve">
     <value>Overview</value>
+  </data>
+  <data name="ParentNo" xml:space="preserve">
+    <value>Parent No</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>Revenues</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Submit</value>

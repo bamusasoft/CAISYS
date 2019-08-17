@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountLevel" xml:space="preserve">
+    <value>مستوى الحساب</value>
+  </data>
   <data name="AccountNo" xml:space="preserve">
     <value>رقم الحساب</value>
   </data>
   <data name="AccountNoRequired" xml:space="preserve">
     <value>ادخل رقم الحساب</value>
+  </data>
+  <data name="AccountType" xml:space="preserve">
+    <value>نوع الحساب</value>
+  </data>
+  <data name="Asset" xml:space="preserve">
+    <value>أصول</value>
   </data>
   <data name="CssIntegrity" xml:space="preserve">
     <value>sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If</value>
@@ -129,11 +138,35 @@
   <data name="CssPath" xml:space="preserve">
     <value>https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css</value>
   </data>
+  <data name="DetailAccount" xml:space="preserve">
+    <value>حساب تفصيلي؟</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>rtl</value>
   </data>
+  <data name="Equity" xml:space="preserve">
+    <value>حقوق الملكية</value>
+  </data>
+  <data name="Expense" xml:space="preserve">
+    <value>مصروفات</value>
+  </data>
+  <data name="Liability" xml:space="preserve">
+    <value>خصوم</value>
+  </data>
+  <data name="NameAr" xml:space="preserve">
+    <value>الاسم العربي</value>
+  </data>
+  <data name="NameEn" xml:space="preserve">
+    <value>الاسم الانجليزي</value>
+  </data>
   <data name="overview" xml:space="preserve">
     <value>عربي</value>
+  </data>
+  <data name="ParentNo" xml:space="preserve">
+    <value>الحساب الرئيسي</value>
+  </data>
+  <data name="Revenue" xml:space="preserve">
+    <value>دخل</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>حفظ</value>
