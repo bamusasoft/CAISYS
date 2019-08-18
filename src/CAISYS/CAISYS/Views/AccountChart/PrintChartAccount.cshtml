@@ -1,0 +1,30 @@
+﻿@model List<AccountChartTreeVm>
+@{
+    ViewData["Title"] = "AccountChart";
+}
+
+<div class="container">
+
+    <div class="row m-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">@SharedLocalizer.GetLocalizedHtmlString("AccountNo")</th>
+                    <th scope="col" class="text-center">@SharedLocalizer.GetLocalizedHtmlString("AccountName")</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var account in Model)
+                {
+                        <tr>
+                            <td>@account.AccountNo</td>
+                            <td>@account.NameAr</td>
+
+                        </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+

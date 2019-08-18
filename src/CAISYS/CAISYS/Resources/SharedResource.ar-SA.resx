@@ -120,6 +120,9 @@
   <data name="AccountLevel" xml:space="preserve">
     <value>مستوى الحساب</value>
   </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>اسم الحساب</value>
+  </data>
   <data name="AccountNo" xml:space="preserve">
     <value>رقم الحساب</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="AccountType" xml:space="preserve">
     <value>نوع الحساب</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>جديد</value>
   </data>
   <data name="Asset" xml:space="preserve">
     <value>أصول</value>
@@ -138,11 +144,17 @@
   <data name="CssPath" xml:space="preserve">
     <value>https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
   <data name="DetailAccount" xml:space="preserve">
     <value>حساب تفصيلي؟</value>
   </data>
   <data name="Direction" xml:space="preserve">
     <value>rtl</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
   </data>
   <data name="Equity" xml:space="preserve">
     <value>حقوق الملكية</value>

@@ -23,18 +23,7 @@ namespace CAISYS.Models
 
         public AccountChart() { }
 
-        public AccountChart(LocService localizer)
-        {
-            _localizer = localizer;
-            AccountTypes = new List<SelectListItem>()
-            {
-                new SelectListItem(_localizer.GetLocalizedHtmlString("Asset"), "1"),
-                new SelectListItem(_localizer.GetLocalizedHtmlString("Liability"), "2"),
-                new SelectListItem(_localizer.GetLocalizedHtmlString("Equity"), "3"),
-                new SelectListItem(_localizer.GetLocalizedHtmlString("Revenue"), "4"),
-                new SelectListItem(_localizer.GetLocalizedHtmlString("Expense"), "5"),
-            };
-        }
+        
         #region Database Table mapping
 
         [Key]
@@ -69,6 +58,19 @@ namespace CAISYS.Models
 
         [NotMapped]
         public List<SelectListItem> AccountTypes { get; set; }
+
+        public List<SelectListItem> LoadAccountTypes(LocService localizer)
+        {
+            AccountTypes = new List<SelectListItem>()
+            {
+                new SelectListItem(localizer.GetLocalizedHtmlString("Asset"), "1"),
+                new SelectListItem(localizer.GetLocalizedHtmlString("Liability"), "2"),
+                new SelectListItem(localizer.GetLocalizedHtmlString("Equity"), "3"),
+                new SelectListItem(localizer.GetLocalizedHtmlString("Revenue"), "4"),
+                new SelectListItem(localizer.GetLocalizedHtmlString("Expense"), "5"),
+            };
+            return AccountTypes;
+        }
 
 
     }

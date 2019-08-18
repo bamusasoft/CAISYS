@@ -6,6 +6,8 @@ using CAISYS.Db;
 using CAISYS.Models;
 using CAISYS.Resources;
 using CAISYS.ViewModels;
+using jsreport.AspNetCore;
+using jsreport.Types;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -24,10 +26,10 @@ namespace CAISYS.Controllers
             _dbContext = dbContext;
             _localizer = localizer;
         }
-
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var accountCharts = await _dbContext.AccountCharts.ToListAsync();
+            var accountCharts = await _dbContext.AccountCharts.OrderBy(x => x.AccountNo).ToListAsync();
             List<AccountChartTreeVm> vm = new List<AccountChartTreeVm>();
             accountCharts.ForEach(x =>
             {
@@ -35,16 +37,30 @@ namespace CAISYS.Controllers
                 {
                     AccountNo = x.AccountNo.Trim(),
                     ParentNo = x.ParentNo.Trim(),
-                    Name = x.NameAr
+                    NameAr = x.NameAr.Trim(),
+                    NameEn = x.NameEn.Trim(),
+                    IsDetailAccount = x.DetailAccount,
+                    AccountLevel = x.AccountLevel
+                    
                 });
             }
             );
             return View(vm);
         }
+        [HttpPost]    
+        [MiddlewareFilter(typeof(JsReportPipeline))]
+        public IActionResult PrintChartAccount(List<AccountChartTreeVm> list)
+        {
+            HttpContext.JsReportFeature().Recipe(Recipe.ChromePdf);
+            return View(list);
+
+        }
+
         [HttpGet]
         public IActionResult AddAccount()
         {
-            AccountChart model = new AccountChart(_localizer);
+            AccountChart model = new AccountChart();
+            model.AccountTypes = model.LoadAccountTypes(_localizer);
             return View(model);
         }
         [HttpPost]
@@ -55,7 +71,6 @@ namespace CAISYS.Controllers
             {
                 try
                 {
-
                     _dbContext.AccountCharts.Add(model);
                     await _dbContext.SaveChangesAsync();
 
@@ -69,6 +84,7 @@ namespace CAISYS.Controllers
 
                 }
             }
+            model.AccountTypes = model.LoadAccountTypes(_localizer);
             return View(model);
 
         }

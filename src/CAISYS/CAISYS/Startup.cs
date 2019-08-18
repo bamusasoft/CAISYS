@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using CAISYS.Db;
 using CAISYS.Models;
 using CAISYS.Resources;
+using jsreport.AspNetCore;
+using jsreport.Binary;
+using jsreport.Local;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -100,7 +103,8 @@ namespace CAISYS
                     // - AcceptLanguageHeaderRequestCultureProvider, sets culture via the "Accept-Language" request header
                     options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
                 });
-
+            services.AddJsReport(new LocalReporting().UseBinary(JsReportBinary.GetBinary()).AsUtility().Create());
+                
             services.AddMvc()
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization(options =>

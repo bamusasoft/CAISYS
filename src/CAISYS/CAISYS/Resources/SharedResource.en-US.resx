@@ -120,6 +120,9 @@
   <data name="AccountLevel" xml:space="preserve">
     <value>Account Level</value>
   </data>
+  <data name="AccountName" xml:space="preserve">
+    <value>Account Name</value>
+  </data>
   <data name="AccountNo" xml:space="preserve">
     <value>Account No</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="AccountType" xml:space="preserve">
     <value>Account Type</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="Asset" xml:space="preserve">
     <value>Assets</value>
@@ -138,11 +144,17 @@
   <data name="CssPath" xml:space="preserve">
     <value>https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="DetailAccount" xml:space="preserve">
     <value>Detail Account?</value>
   </data>
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Equity" xml:space="preserve">
     <value>Equity</value>

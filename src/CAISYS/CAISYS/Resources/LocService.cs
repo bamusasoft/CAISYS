@@ -11,6 +11,8 @@ namespace CAISYS.Resources
     {
         private readonly IStringLocalizer _localizer;
 
+        
+
         public LocService(IStringLocalizerFactory factory)
         {
             var type = typeof(SharedResource);

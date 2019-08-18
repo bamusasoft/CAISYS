@@ -4,58 +4,64 @@
 }
 
 <div class="container">
-   
+
     <div class="row m-4">
-        @foreach (var acc in Model)
-        {
-            if(acc.ParentNo == "0")
-            {
-                <ol>
-                    <li>
-                        @acc.ParentNo @acc.Name
-                    </li>
-                </ol>
-            }
-        }
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">@SharedLocalizer.GetLocalizedHtmlString("AccountNo")</th>
+                    <th scope="col" class="text-center">@SharedLocalizer.GetLocalizedHtmlString("AccountName")</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    @if (!Model[i].IsDetailAccount)
+                    {
+                        <tr>
+                            <td>@Model[i].AccountNo</td>
+                            <td>@Model[i].NameAr</td>
+                            <td>
+                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Add")</a>
+                            </td>
+                            <td>
+                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
+                            </td>
+                            <td>
+                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
+                            </td>
+
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@Model[i].AccountNo</td>
+                            <td>@Model[i].NameAr</td>
+                            <td>
+                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
+                            </td>
+                            <td>
+                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
+                            </td>
+
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
     </div>
     <div class="row m-4">
         <div class="col-5 text-center">
-            <a asp-action="AddAccount" asp-controller="AccountChart">
-                <img src="~/images/add-document_150x130.png" />
-                <h4>اضافة حساب</h4>
-            </a>
-        </div>
-
-        <div class="col-5 text-center">
-            <a asp-action="AddAccount" asp-controller="AccountChart" class="justify-content-center">
-                <img src="~/images/edit-document.png"/>
-                <h4 >تعديل حساب</h4>
-            </a>
-        </div>
-    </div>
-
-    @*<div class="row m-4">
-        <div class="col-5 text-center">
-            <a asp-action="AddAccount" asp-controller="AccountChart">
-                <img src="~/images/delete-button.png" />
-                <h4>حذف حساب</h4>
-            </a>
-        </div>
-        <div class="col-5 text-center">
-            <a asp-action="AddAccount" asp-controller="AccountChart">
-                <img src="~/images/account.png" />
-                <h4>شجرة الحسابات</h4>
-            </a>
-        </div>
-    </div>
-
-    <div class="row m-4">
-        <div class="col-5 text-center">
-            <a asp-action="AddAccount" asp-controller="AccountChart">
+            <form asp-controller="AccountChart" asp-action="PrintChartAccount" method="post" asp-route-list="@Model">
+                <input type="submit" value="Print" />
+            </form>
+            <a asp-action="PrintChartAccount" asp-controller="AccountChart">
                 <img src="~/images/printer.png" />
                 <h4>طباعة الشجرة</h4>
             </a>
         </div>
-    </div>*@
+    </div>
 </div>
 
