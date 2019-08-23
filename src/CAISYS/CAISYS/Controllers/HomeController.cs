@@ -12,5 +12,11 @@ namespace CAISYS.Controllers
         {
             return View();
         }
+
+        public IActionResult OperationResult(string msg)
+        {
+            ViewBag.Msg = msg;
+            return View();
+        }
     }
 }

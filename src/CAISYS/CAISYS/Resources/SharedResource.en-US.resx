@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountHasChildernError" xml:space="preserve">
+    <value>Cannot change account to detailed if it has sub accounts</value>
+  </data>
+  <data name="AccountHasEntriesError" xml:space="preserve">
+    <value>Cannot change account from detailed if it has entries</value>
+  </data>
   <data name="AccountLevel" xml:space="preserve">
     <value>Account Level</value>
   </data>
@@ -137,6 +143,15 @@
   </data>
   <data name="Asset" xml:space="preserve">
     <value>Assets</value>
+  </data>
+  <data name="ChartAccountTitle" xml:space="preserve">
+    <value>Chart Accounts</value>
+  </data>
+  <data name="ConfirmAction" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete?</value>
   </data>
   <data name="CssIntegrity" xml:space="preserve">
     <value>sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T</value>

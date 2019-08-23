@@ -1,36 +1,19 @@
-﻿using CAISYS.Resources;
+﻿using CAISYS.Models;
+using CAISYS.Resources;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CAISYS.Models
+namespace CAISYS.ViewModels.AccountChart
 {
-    public enum AccountType
+    public class UpdateAccountVm
     {
-        Asset = 1,
-        Liablility = 2,
-        Equity = 3,
-        Revenue = 4,
-        Expense = 5
-    }
-    public class AccountChart
-    {
-
-        public AccountChart() { }
-
-        
-        #region Database Table mapping
-
-        [Key]
-        [Required(ErrorMessage ="AccountNoRequired")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Required(ErrorMessage = "AccountNoRequired")]
         public string AccountNo { get; set; }
 
-        [Required]
         public string ParentNo { get; set; }
 
         [Required]
@@ -39,25 +22,18 @@ namespace CAISYS.Models
         [Required]
         public string NameEn { get; set; }
 
-        [Required]
         public AccountType AccountType { get; set; }
 
         [Required]
         public bool DetailAccount { get; set; }
 
-        [Required]
         public int AccountLevel { get; set; }
 
         [Required]
-        public int CostCenter { get; set; } = 0; //Defaulted to 0. When you support cost centers change this.
-        
-        public ICollection<GeneralLedger> GeneralLedgers { get; set; }
-        public ICollection<Journal> Journals { get; set; }
-        #endregion
+        public int CostCenter { get; set; } = 0;
 
-        [NotMapped]
+
         public List<SelectListItem> AccountTypes { get; set; }
-
         public List<SelectListItem> LoadAccountTypes(LocService localizer)
         {
             AccountTypes = new List<SelectListItem>()
@@ -70,9 +46,5 @@ namespace CAISYS.Models
             };
             return AccountTypes;
         }
-
-        
-
-
     }
 }

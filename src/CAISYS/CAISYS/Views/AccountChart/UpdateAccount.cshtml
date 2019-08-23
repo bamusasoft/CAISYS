@@ -1,0 +1,53 @@
+﻿@model UpdateAccountVm
+
+@{
+    ViewData["Title"] = "UpdateAccount";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form asp-action="AddAcount" asp-controller="AccountChart" class="border border-light p-5">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="AccountNo" />
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("AccountNo")</label>
+                    <input class="form-control" asp-for="AccountNo" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("ParentNo")</label>
+                    <input class="form-control" asp-for="ParentNo" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("NameAr")</label>
+                    <input class="form-control" asp-for="NameAr" />
+                </div>
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("NameEn")</label>
+                    <input class="form-control" asp-for="NameEn" />
+                </div>
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("AccountType")</label>
+                    <select class="form-control" asp-for="AccountType" asp-items="Model.AccountTypes" disabled></select>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" asp-for="DetailAccount" />
+                    <label class="form-check-label">@SharedLocalizer.GetLocalizedHtmlString("DetailAccount")</label>
+                </div>
+
+                <div class="form-group">
+                    <label>@SharedLocalizer.GetLocalizedHtmlString("AccountLevel")</label>
+                    <input class="form-control" asp-for="AccountLevel" disabled />
+                </div>
+
+                <button class="btn btn-primary" type="submit">@SharedLocalizer.GetLocalizedHtmlString("Submit")</button>
+            </form>
+        </div>
+    </div>
+</div>

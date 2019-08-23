@@ -22,13 +22,13 @@
                             <td>@Model[i].AccountNo</td>
                             <td>@Model[i].NameAr</td>
                             <td>
-                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Add")</a>
+                                <a asp-controller="AccountChart" asp-action="GetAccount" asp-route-v="@Model[i].AccountNo" asp-route-op="@CrudOp.Add" >@SharedLocalizer.GetLocalizedHtmlString("Add")</a>
                             </td>
                             <td>
-                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
+                                <a asp-controller="AccountChart" asp-action="GetAccount" asp-route-v="@Model[i].AccountNo" asp-route-op="@CrudOp.Edit">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
                             </td>
                             <td>
-                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
+                                <a asp-controller="AccountChart" asp-action="GetAccount" asp-route-v="@Model[i].AccountNo" asp-route-op="@CrudOp.Delete">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
                             </td>
 
                         </tr>
@@ -39,10 +39,10 @@
                             <td>@Model[i].AccountNo</td>
                             <td>@Model[i].NameAr</td>
                             <td>
-                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
+                                <a asp-controller="AccountChart" asp-action="GetAccount" asp-route-v="@Model[i].AccountNo" asp-route-op="@CrudOp.Edit">@SharedLocalizer.GetLocalizedHtmlString("Edit")</a>
                             </td>
                             <td>
-                                <a href="#">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
+                                <a asp-controller="AccountChart" asp-action="GetAccount" asp-route-v="@Model[i].AccountNo" asp-route-op="@CrudOp.Delete">@SharedLocalizer.GetLocalizedHtmlString("Delete")</a>
                             </td>
 
                         </tr>
@@ -54,7 +54,7 @@
     </div>
     <div class="row m-4">
         <div class="col-5 text-center">
-            <form asp-controller="AccountChart" asp-action="PrintChartAccount" method="post" asp-route-list="@Model">
+            <form asp-controller="AccountChart" asp-action="PrintChartAccount" method="get">
                 <input type="submit" value="Print" />
             </form>
             <a asp-action="PrintChartAccount" asp-controller="AccountChart">

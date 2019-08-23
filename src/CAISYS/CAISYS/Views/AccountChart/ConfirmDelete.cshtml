@@ -1,0 +1,22 @@
+﻿@model ConfirmDeleteVm
+@{
+    ViewData["Title"] = "ConfirmDelete";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form asp-action="ConfirmDelete" asp-controller="AccountChart" method="post" class="border border-danger p-5">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div>
+                    <input type="hidden" asp-for="Id" />
+                </div>
+                <div>
+                    <h4 class="text-danger">@Model.Message</h4>
+                </div>
+
+                <button class="btn btn-danger" type="submit">@SharedLocalizer.GetLocalizedHtmlString("ConfirmAction")</button>
+            </form>
+        </div>
+    </div>
+</div>
+
