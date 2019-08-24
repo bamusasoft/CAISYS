@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CAISYS.ViewModels.AccountChart
+namespace CAISYS.ViewModels
 {
     public class UpdateAccountVm
     {

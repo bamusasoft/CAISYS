@@ -7,7 +7,6 @@ using CAISYS.Db;
 using CAISYS.Models;
 using CAISYS.Resources;
 using CAISYS.ViewModels;
-using CAISYS.ViewModels.AccountChart;
 using jsreport.AspNetCore;
 using jsreport.Types;
 using Microsoft.AspNetCore.DataProtection;

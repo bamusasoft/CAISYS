@@ -13,16 +13,22 @@ namespace CAISYS.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int EntryNo { get; set; }
 
+        [Required]
         public DateTime EntryDate { get; set; }
 
+        [Required]
         public string AccountNo { get; set; }
 
+        [Required]
         public string Explanation { get; set; }
 
+        [Required]
         public decimal Debit { get; set; }
 
+        [Required]
         public decimal Credit { get; set; }
 
+        [Required]
         public bool Posted { get; set; }
 
         public AccountChart AccountChart { get; set; }

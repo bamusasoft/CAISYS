@@ -93,7 +93,6 @@ namespace CAISYS
                     options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
                     options.SupportedCultures = supportedCultures;
                     options.SupportedUICultures = supportedCultures;
-
                     // You can change which providers are configured to determine the culture for requests, or even add a custom
                     // provider with your own logic. The providers will be asked in order to provide a culture for each request,
                     // and the first to provide a non-null result that is in the configured supported cultures list will be used.
@@ -103,6 +102,8 @@ namespace CAISYS
                     // - AcceptLanguageHeaderRequestCultureProvider, sets culture via the "Accept-Language" request header
                     options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
                 });
+           
+
             services.AddJsReport(new LocalReporting().UseBinary(JsReportBinary.GetBinary()).AsUtility().Create());
                 
             services.AddMvc()

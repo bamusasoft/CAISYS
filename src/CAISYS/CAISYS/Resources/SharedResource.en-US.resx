@@ -153,11 +153,17 @@
   <data name="ConfirmDelete" xml:space="preserve">
     <value>Are you sure you want to delete?</value>
   </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
   <data name="CssIntegrity" xml:space="preserve">
     <value>sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T</value>
   </data>
   <data name="CssPath" xml:space="preserve">
     <value>https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Debit</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
@@ -171,11 +177,20 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>Entry Date</value>
+  </data>
+  <data name="EntryNo" xml:space="preserve">
+    <value>Entry No</value>
+  </data>
   <data name="Equity" xml:space="preserve">
     <value>Equity</value>
   </data>
   <data name="Expense" xml:space="preserve">
     <value>Expenses</value>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>Explanation</value>
   </data>
   <data name="Liability" xml:space="preserve">
     <value>Liabilities</value>

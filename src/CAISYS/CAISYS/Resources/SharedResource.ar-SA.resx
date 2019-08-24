@@ -153,11 +153,17 @@
   <data name="ConfirmDelete" xml:space="preserve">
     <value>هل أنت متأكد من رغبتك في الحذف</value>
   </data>
+  <data name="Credit" xml:space="preserve">
+    <value>دائن</value>
+  </data>
   <data name="CssIntegrity" xml:space="preserve">
     <value>sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If</value>
   </data>
   <data name="CssPath" xml:space="preserve">
     <value>https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>مدين</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
@@ -171,11 +177,20 @@
   <data name="Edit" xml:space="preserve">
     <value>تعديل</value>
   </data>
+  <data name="EntryDate" xml:space="preserve">
+    <value>تاريخ القيد</value>
+  </data>
+  <data name="EntryNo" xml:space="preserve">
+    <value>رقم القيد</value>
+  </data>
   <data name="Equity" xml:space="preserve">
     <value>حقوق الملكية</value>
   </data>
   <data name="Expense" xml:space="preserve">
     <value>مصروفات</value>
+  </data>
+  <data name="Explanation" xml:space="preserve">
+    <value>الوصف</value>
   </data>
   <data name="Liability" xml:space="preserve">
     <value>خصوم</value>
