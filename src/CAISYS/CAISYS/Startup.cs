@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using CAISYS.Db;
 using CAISYS.Models;
@@ -87,7 +88,7 @@ namespace CAISYS
                     var supportedCultures = new List<CultureInfo>
                         {
                             new CultureInfo("en-US"),
-                            new CultureInfo("ar-SA"),
+                            new CultureInfo("ar-EG"),
                         };
 
                     options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
@@ -105,7 +106,8 @@ namespace CAISYS
            
 
             services.AddJsReport(new LocalReporting().UseBinary(JsReportBinary.GetBinary()).AsUtility().Create());
-                
+
+
             services.AddMvc()
                 .AddViewLocalization()
                 .AddDataAnnotationsLocalization(options =>

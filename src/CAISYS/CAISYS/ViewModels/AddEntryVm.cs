@@ -10,29 +10,29 @@ namespace CAISYS.ViewModels
 {
     public class AddEntryVm
     {
-        public AddEntryVm()
+       public AddEntryVm()
         {
             Entries = new List<EntryItem>();
         }
         public int EntryNo { get; set; }
 
         [Required]
-        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime EntryDate { get; set; }
 
-        
+
 
         [Required]
         public bool Posted { get; set; }
 
         public List<EntryItem> Entries
         {
-            get;set;
+            get; set;
         }
 
         public void AddAccountCharts(List<AccountChart> accounts)
         {
-            for(int i = 0; i < 11; i++)
+            
+            for (int i = 0; i < 10; i++)
             {
                 Entries.Add(new EntryItem()
                 {
@@ -41,30 +41,38 @@ namespace CAISYS.ViewModels
             }
             foreach (var entry in Entries)
             {
+                entry.AccountCharts.Add(new SelectListItem("Choose Account", "-1"));
                 accounts.ForEach(x =>
                 {
                     entry.AccountCharts.Add(new SelectListItem(x.NameAr, x.AccountNo));
                 });
             }
-           
+
+        }
+        public void RefreshAccountCharts(List<AccountChart> accounts)
+        {
+            foreach (var entry in Entries)
+            {
+                entry.AccountCharts = new List<SelectListItem>();
+                entry.AccountCharts.Add(new SelectListItem("Choose Account", "-1"));
+
+                accounts.ForEach(x =>
+                {
+                    entry.AccountCharts.Add(new SelectListItem(x.NameAr, x.AccountNo));
+                });
+            }
         }
 
     }
     public class EntryItem
     {
-        [Required]
         public string AccountNo { get; set; }
 
-        [Required]
         public string Explanation { get; set; }
 
-        [Required]
         public decimal Debit { get; set; }
 
-        [Required]
         public decimal Credit { get; set; }
-
-        public AccountChart AccountChart { get; set; }
 
         public List<SelectListItem> AccountCharts { get; set; }
 
